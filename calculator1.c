@@ -5,31 +5,46 @@ int main(){
 	float n1, n2, resultado;
     char operador;
 			
-    printf("Insira o primeiro número: ");
-	scanf("%f", &n1);
+    printf("Insira um n°.: ");
+    scanf("%f", &n1);
 
-    printf("Digite o operador (+, -, * ou /): ");
-    scanf(" %c", &operador);
+    printf("Insira outro n°.: ");
+    scanf("%f", &n2);
 
-    printf("Insira o segundo número: ");
-	scanf("%f", &n2);
-	
-        if(operador == '+'){
+    printf("Insira a operação (+, -, * ou /): ");
+    scanf("\n%c", &operador);
+
+    switch(operador)
+    {
+        case '+':
             resultado = n1 + n2;
-        }else if(operador == '-'){
-            resultado = n1 - n2;
-        }else if(operador == '*'){
-            resultado = n1 * n2;
-        }else if(operador == '/'){
-            resultado = n1 / n2;
-        }else{
-            printf("Bon voyage!");
-        }
-        
-        printf("Resultado: %g\n", resultado);
+            printf("Resultado: %.2f\n", resultado);
+            break;
+      
+         case '-':
+            resultado = n1 - n2; 
+            printf("Resultado: %.2f\n", resultado);
+            break;
 
-    
-				
+        case '*':
+            resultado = n1 * n2;
+            printf("Resultado: %.2f\n", resultado);
+            break;
+        
+        case '/':
+            if (n2 != 0){
+                resultado = n1 / n2;
+                printf("Resultado: %.2f\n", resultado);
+            }else{
+                printf("ERRO: Divisão por zero.\n");
+            }
+
+
+        default:
+            printf("Operação inválida!\n");
+            break;
+
+    }
 
 	return 0;
 }	
