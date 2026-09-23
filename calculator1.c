@@ -1,50 +1,42 @@
 #include <stdio.h>
 
+int somar(float a, float b){
+    return a + b;
+}
+
+int subtrair(float a, float b){
+    return a - b;
+}
+
+int multiplicar(float a, float b){
+    return a * b;
+}
+
+int dividir(float a, float b){
+    return a / b;
+}
+
 int main(){
 			
-	float n1, n2, resultado;
-    char operador;
-			
-    printf("Insira um n°.: ");
-    scanf("%f", &n1);
+    float a, b;
 
-    printf("Insira outro n°.: ");
-    scanf("%f", &n2);
+    printf("Digite um número para a: ");
+    scanf("%f", &a);
 
-    printf("Insira a operação (+, -, * ou /): ");
-    scanf("\n%c", &operador);
+    printf("Digite um número para b: ");
+    scanf("%f", &b);
 
-    switch(operador)
-    {
-        case '+':
-            resultado = n1 + n2;
-            printf("Resultado: %.2f\n", resultado);
-            break;
-      
-         case '-':
-            resultado = n1 - n2; 
-            printf("Resultado: %.2f\n", resultado);
-            break;
+    float resultado1 = somar(a, b);
+    printf("O resultado da soma é: %.1f\n", resultado1);
 
-        case '*':
-            resultado = n1 * n2;
-            printf("Resultado: %.2f\n", resultado);
-            break;
-        
-        case '/':
-            if (n2 != 0){
-                resultado = n1 / n2;
-                printf("Resultado: %.2f\n", resultado);
-            }else{
-                printf("ERRO: Divisão por zero.\n");
-            }
+    float resultado2 = subtrair(a, b);
+    printf("O resultado da subtração é: %.1f\n", resultado2);
 
+    float resultado3 = multiplicar(a, b);
+    printf("O resultado da multiplicação é: %.1f\n", resultado3);
 
-        default:
-            printf("Operação inválida!\n");
-            break;
-
-    }
+    float resultado4 = dividir(a, b);
+    printf("O resultado da divisão é: %.1f\n", resultado4);
 
 	return 0;
 }	
